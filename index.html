@@ -4,45 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16"  href="/img/favicon-16x16.png">
+    <link rel="stylesheet" href="style/style.css">
     <title>Ti 💕 Lolô</title>
-    <style>
-        body {
-            background-color: red;
-        }
-        
-        .painel {
-            margin: auto;
-            width: 400px;
-            height: 400px;
-            background-color: white;
-            border-radius: 20px;
-            text-align: center;
-            padding-top: 50px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        #sim {
-            height: 40px;
-            width: 60px;
-            background-color: red;
-            border: 2px solid white;
-            border-radius: 10px;
-            color: white;
-            margin-left: -50px;
-        }
-
-        #nao {
-            position: absolute;
-            height: 40px;
-            width: 60px;
-            background-color: red;
-            border: 2px solid white;
-            border-radius: 10px;
-            color: white;
-            margin-left: 10px;
-        }
-
-    </style>
 </head>
 <body>
     <div class="painel">
@@ -51,33 +14,10 @@
 
         <h1>Vamos em um date?</h1>
         
-        <button onclick="yes()"  id="sim">Sim!</button>
-        <button onmouseover="fuja()" id="nao">Não</button>
+        <button id="btnYes">Sim!</button>
+        <button id="btnNo">Não</button>
 
     </div>
-
-    <script>
-        function fuja() {
-            let btnNao = document.getElementById('nao')
-
-            let widthWindow = window.innerWidth;
-            let heightWindow = window.innerHeight;            
-
-            let maxWidthWindow = widthWindow - btnNao.offsetWidth;
-            let maxHeightWindow = heightWindow - btnNao.offsetHeight;
-
-            let randomX = Math.floor (Math.random() * maxWidthWindow);
-            let randomY = Math.floor (Math.random() * maxHeightWindow);
-
-            btnNao.style.left = randomX + "px";
-            btnNao.style.top = randomY + "px";
-        }
-
-        function yes() {
-            alert("bora!")
-        }
-
-
-    </script>
+    <script src="script/script.js"></script>
 </body>
 </html>
