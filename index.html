@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16"  href="/img/favicon-16x16.png">
+    <title>Ti 💕 Lolô</title>
+    <style>
+        body {
+            background-color: red;
+        }
+        
+        .painel {
+            margin: auto;
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #sim {
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -50px;
+        }
+
+        #nao {
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="painel">
+        
+        <img src="https://imgs.search.brave.com/2iU6UGUuc81fuJr4m1-ckqfFE4I86m4bux1ZotjhyHo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/VUdlWW5FUUVZcjhB/QUFBbS9iZWxvbmdp/bmctYmVsb25ncy53/ZWJw">
+
+        <h1>Vamos em um date?</h1>
+        
+        <button onclick="yes()"  id="sim">Sim!</button>
+        <button onmouseover="fuja()" id="nao">Não</button>
+
+    </div>
+
+    <script>
+        function fuja() {
+            let btnNao = document.getElementById('nao')
+
+            let widthWindow = window.innerWidth;
+            let heightWindow = window.innerHeight;            
+
+            let maxWidthWindow = widthWindow - btnNao.offsetWidth;
+            let maxHeightWindow = heightWindow - btnNao.offsetHeight;
+
+            let randomX = Math.floor (Math.random() * maxWidthWindow);
+            let randomY = Math.floor (Math.random() * maxHeightWindow);
+
+            btnNao.style.left = randomX + "px";
+            btnNao.style.top = randomY + "px";
+        }
+
+        function yes() {
+            alert("bora!")
+        }
+
+
+    </script>
+</body>
+</html>
