@@ -31,5 +31,24 @@ class BotaoFujao {
     }
 }
 
+class Heart {
+    constructor(){
+        this.container = document.querySelector('.container')
+
+        setInterval(this.heartFactory.bind(this), 750);
+    }
+
+    heartFactory() {
+        const heartCreat = document.createElement('div');
+        heartCreat.classList.add('hearts');
+        heartCreat.innerHTML = '❤️';
+        this.container.appendChild(heartCreat)
+        console.log(heartCreat);
+
+    }
+}
+
+
 // Inicialização da classe
 const app = new BotaoFujao("#btnYes", "#btnNo");
+//const fallingHearts = new Heart();
