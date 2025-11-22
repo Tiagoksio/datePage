@@ -1,4 +1,4 @@
-class BotaoFujao {
+class RunAwayBtn {
     constructor(btnYesSelector, btnNoSelector) {
         this.btnYes = document.querySelector(btnYesSelector);
         this.btnNo = document.querySelector(btnNoSelector);
@@ -33,22 +33,26 @@ class BotaoFujao {
 
 class Heart {
     constructor(){
-        this.container = document.querySelector('.container')
+        this.container = document.querySelector('.heartContainer')
 
-        setInterval(this.heartFactory.bind(this), 750);
+        setInterval(this.heartFactory.bind(this), 500);
     }
 
     heartFactory() {
         const heartCreat = document.createElement('div');
         heartCreat.classList.add('hearts');
         heartCreat.innerHTML = '❤️';
+        heartCreat.style.left = Math.random() * 100 + 'vw';
+        heartCreat.style.animationDuration = Math.random() * 3 + 2 + 's';
         this.container.appendChild(heartCreat)
-        console.log(heartCreat);
+        setTimeout(()=>{
+            heartCreat.remove();
+        }, 6000)
 
     }
 }
 
 
 // Inicialização da classe
-const app = new BotaoFujao("#btnYes", "#btnNo");
-//const fallingHearts = new Heart();
+const btnListener = new RunAwayBtn("#btnYes", "#btnNo");
+const fallingHearts = new Heart();
